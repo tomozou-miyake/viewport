@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+  <head>
+    <title>TODOリスト</title>
+  </head>
+  <body>
+    <div class="container">
+        <h2 class="bg-light mt-3 py-1">TODOリスト</h2>
+
+        <button type="button" id="" class="btn btn-outline-primary mb-3" data-toggle="modal" data-target="#todoModal">+</button>
+
+        <!-- Modal -->
+        <div class="modal" id="todoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">タスク登録</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-warning" role="alert" id="divAlert">
+                            <span id="inputAlert"></span>
+                        </div>
+                        <form action="">
+                            <div class="form-group">
+                                <label for="inputName" class="">タスク</label>
+                                <input type="text" class="form-control" id="inputTask" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputLimit" class="">期限</label>
+                                <input type="text" class="form-control" id="inputLimit" placeholder="">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+                        <button type="button" class="btn btn-primary" id="btnAdd">登録する</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- タブを画面に表示する -->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="todolist-tab" data-toggle="tab" href="#todolist" role="tab" aria-controls="todolist" aria-selected="true">未完了のタスク</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="complete-tab" data-toggle="tab" href="#complete" role="tab" aria-controls="complete" aria-selected="false">完了したタスク</a>
+            </li>
+            <!-- 新しいタグを追加する場合はコメントを外してください-->
+            <!-- <li class="nav-item">
+                <a class="nav-link" id="別のidを設定" data-toggle="tab" href="#complete" role="tab" aria-controls="complete" aria-selected="false">完了したタスク</a>
+            </li> -->
+        </ul>
+
+        <!-- タブの中身 -->
+        <div class="tab-content" id="myTabContent">
+            <!-- 未完了のタスクリスト -->
+            <div class="tab-pane fade show active" id="todolist" role="tabpanel" aria-labelledby="todolist-tab">
+                <div class="table-responsive">
+                    <table class="table table-hover" id="todoList">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>タスク内容</th>
+                                <th>期限</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- jQueryで作成する -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- 完了したタスクリスト -->
+            <div class="tab-pane fade" id="complete" role="tabpanel" aria-labelledby="complete-tab">
+                <div class="table-responsive">
+                    <table class="table table-hover" id="completeList">
+                        <thead>
+                            <tr>
+                                <th>タスク内容</th>
+                                <th>期限</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- jQueryで作成する -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- 新しいタグを追加する場合はコメントを外してください-->
+            <!-- <div class="tab-pane fade" id="別のidを設定" role="tabpanel" aria-labelledby="complete-tab">
+            </div> -->
+        </div>
+    </div>
+  </body>
+</html>

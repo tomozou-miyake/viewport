@@ -1,0 +1,32 @@
+<header class="py-4">
+  <div class="container text-center">
+    <h1><a href=#><img src="/top_images/todotitle.png" alt="Todolist Title"></a></h1>
+  </div>
+</header>
+<main>
+  <!-- メインビジュアル -->
+  <div class="py-4">
+    <div class="container">
+      <h2 class="mb-12">
+        User：
+        <%= current_user.name %>
+      </h2>
+      <h1 class="mb-12">Task Name</h1>
+        <table class="table table-striped">
+          <tbody>
+            <% @tasks.each do |task| %>
+              <tr>
+                <th><%= task.title %></th>
+                <td><%= link_to '編集', edit_task_path(task) %></td>
+                <td><%= link_to '削除', task_path(task), method: :delete %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+        <button type="button" class="btn btn-secondary">
+          <%= link_to '追加', new_task_path, :style=>"color:#fff;"%>
+        </button>
+          <%= link_to "ホームに戻る", root_path, class: 'link'%>
+    </div>
+  </div>
+</main>
